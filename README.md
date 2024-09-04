@@ -4,13 +4,13 @@ Este proyecto consiste en una aplicación web simple para la gestión de usuario
 Configuración del Entorno
 Requisitos Previos
 Servidor Local con PHP: Asegúrate de tener un servidor local en funcionamiento que soporte PHP (como XAMPP, WAMP, MAMP, etc.).
-Base de Datos MySQL: Crea una base de datos MySQL para almacenar la información de los usuarios. La cantidad de tablas necesarias queda a tu consideración, aunque una estructura básica podría incluir:
-usuarios: Para almacenar información como id, nombre_usuario, contraseña, etc.
+Base de Datos MySQL: Crea una base de datos MySQL para almacenar la información de los usuarios. 
 Configuración
 Configura tu servidor local para que apunte al directorio raíz de este proyecto.
-Importa la estructura de la base de datos desde un archivo SQL (si está disponible) o créala manualmente en tu sistema de gestión de bases de datos preferido.
+Importa la estructura de la base de datos desde un archivo SQL.
 Estructura del Proyecto
 Organiza tu proyecto siguiendo la estructura de archivos y carpetas que se describe a continuación:
+
 /proyecto
 │
 ├── index.php              # Página principal que muestra la lista de usuarios y el formulario de inicio de sesión.
@@ -27,27 +27,17 @@ Organiza tu proyecto siguiendo la estructura de archivos y carpetas que se descr
 │   └── funciones.js       # Archivo JS para manejar peticiones Ajax y la actualización dinámica del contenido.
 
 Funcionalidades Específicas
+
+
 1. Inicio de Sesión
-Formulario de Inicio de Sesión: Implementa un formulario con campos para el nombre de usuario y la contraseña en index.php.
-Validación de Credenciales: En login.php, valida las credenciales ingresadas por el usuario contra los datos almacenados en la base de datos.
-Redirección o Cambio de Interfaz: Tras un inicio de sesión exitoso, redirige al usuario a una página protegida o ajusta la interfaz para reflejar el estado de sesión activa.
-Manejo de Intentos Fallidos (Opcional): Puedes implementar un sistema de bloqueo temporal tras varios intentos fallidos de inicio de sesión.
-2. Interfaz de Usuario (UI)
-Adherencia al Diseño: Asegúrate de seguir estrictamente las líneas de diseño proporcionadas en el archivo diseno.pdf.
-CSS Libre: Puedes utilizar CSS puro, preprocesadores como SASS/LESS, o frameworks CSS como Bootstrap.
-Mejoras de UX (Opcional):
-Implementa loaders o indicadores de progreso durante las peticiones Ajax.
-Añade notificaciones visuales (éxito, error, advertencia) para informar al usuario sobre el resultado de las operaciones.
-Incluye animaciones sutiles para mejorar las transiciones y efectos visuales.
-Maneja errores de manera clara y amigable, proporcionando mensajes útiles al usuario.
-Funcionalidades Específicas
-1. Inicio de Sesión
+
 Formulario de Inicio de Sesión: Implementa un formulario con campos para el nombre de usuario y la contraseña en index.php.
 Validación de Credenciales: En login.php, valida las credenciales ingresadas por el usuario contra los datos almacenados en la base de datos.
 Redirección o Cambio de Interfaz: Tras un inicio de sesión exitoso, redirige al usuario a una página protegida o ajusta la interfaz para reflejar el estado de sesión activa.
 Manejo de Intentos Fallidos (Opcional): Puedes implementar un sistema de bloqueo temporal tras varios intentos fallidos de inicio de sesión (3 en mi caso y por 10 minutos).
-2. Interfaz de Usuario (UI)
-Adherencia al Diseño: Asegúrate de seguir estrictamente las líneas de diseño proporcionadas en el archivo diseno.pdf.
+
+3. Interfaz de Usuario (UI)
+
 CSS Libre: Puedes utilizar CSS puro, preprocesadores como SASS/LESS, o frameworks CSS como Bootstrap.
 Mejoras de UX (Opcional):
 Implementa loaders o indicadores de progreso durante las peticiones Ajax.
