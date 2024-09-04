@@ -1,28 +1,16 @@
 <?php
+include 'db_config.php';
 session_start();
 
-// Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['user_id'])) {
+    
     header('Location: login.php');
     exit();
 }
 
-// Aquí puedes obtener los datos de los usuarios desde la base de datos o un array
-$usuarios = [
-    ['nombre' => 'Jared Buenrostro', 'email' => 'jared@gmail.com', 'telefono' => '+123 456 789', 'rol' => 'Diseñador', 'fecha_union' => '12-10-2014', 'salario' => '$1200'],
-    ['nombre' => 'Marco Hernández', 'email' => 'markhe@gmail.com', 'telefono' => '+234 456 789', 'rol' => 'Desarrollador', 'fecha_union' => '10-09-2014', 'salario' => '$1800'],
-    ['nombre' => 'Jared Buenrostro', 'email' => 'jared@gmail.com', 'telefono' => '+123 456 789', 'rol' => 'Diseñador', 'fecha_union' => '12-10-2014', 'salario' => '$1200'],
-    ['nombre' => 'Marco Hernández', 'email' => 'markhe@gmail.com', 'telefono' => '+234 456 789', 'rol' => 'Desarrollador', 'fecha_union' => '10-09-2014', 'salario' => '$1800'],
-    ['nombre' => 'Jared Buenrostro', 'email' => 'jared@gmail.com', 'telefono' => '+123 456 789', 'rol' => 'Diseñador', 'fecha_union' => '12-10-2014', 'salario' => '$1200'],
-    ['nombre' => 'Marco Hernández', 'email' => 'markhe@gmail.com', 'telefono' => '+234 456 789', 'rol' => 'Desarrollador', 'fecha_union' => '10-09-2014', 'salario' => '$1800'],
-    ['nombre' => 'Jared Buenrostro', 'email' => 'jared@gmail.com', 'telefono' => '+123 456 789', 'rol' => 'Diseñador', 'fecha_union' => '12-10-2014', 'salario' => '$1200'],
-    ['nombre' => 'Marco Hernández', 'email' => 'markhe@gmail.com', 'telefono' => '+234 456 789', 'rol' => 'Desarrollador', 'fecha_union' => '10-09-2014', 'salario' => '$1800'],
-    ['nombre' => 'Jared Buenrostro', 'email' => 'jared@gmail.com', 'telefono' => '+123 456 789', 'rol' => 'Diseñador', 'fecha_union' => '12-10-2014', 'salario' => '$1200'],
-    ['nombre' => 'Marco Hernández', 'email' => 'markhe@gmail.com', 'telefono' => '+234 456 789', 'rol' => 'Desarrollador', 'fecha_union' => '10-09-2014', 'salario' => '$1800'],
-    ['nombre' => 'Jared Buenrostro', 'email' => 'jared@gmail.com', 'telefono' => '+123 456 789', 'rol' => 'Diseñador', 'fecha_union' => '12-10-2014', 'salario' => '$1200'],
-    ['nombre' => 'Marco Hernández', 'email' => 'markhe@gmail.com', 'telefono' => '+234 456 789', 'rol' => 'Desarrollador', 'fecha_union' => '10-09-2014', 'salario' => '$1800'],
-];
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -31,20 +19,23 @@ $usuarios = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Usuarios - iStrategy</title>
     <link rel="stylesheet" href="css/crud.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="container">
         <header class="header">
-            <div class="logo">
-                <img src="Elementos-iStrategy/LOGO-AVION-ROJO-iSTRATEGY.png" alt="iStrategy Logo">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="Elementos-iStrategy/LOGO-AVION-ROJO-iSTRATEGY.png"  alt="iStrategy Logo">
+                </div>
             </div>
             <div class="search-bar">
-                <input type="text" placeholder="Buscador...">
+                <input type="text" placeholder="Buscador..." id="search-bar">
             </div>
         </header>
         
         <aside class="sidebar">
-            <button class="add-contact">Agregar nuevo contacto</button>
+            <a href="agregar_usuario.php"><button class="add-contact">Agregar nuevo contacto</button></a>
             <ul>
                 <li>Trabajo <span class="badge">10</span></li>
                 <li>Diseño <span class="badge">28</span></li>
@@ -70,27 +61,13 @@ $usuarios = [
                             <th>Acción</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <?php foreach ($usuarios as $index => $usuario): ?>
-                        <tr>
-                            <td><?php echo $index + 1; ?></td>
-                            <td><?php echo $usuario['nombre']; ?></td>
-                            <td><?php echo $usuario['email']; ?></td>
-                            <td><?php echo $usuario['telefono']; ?></td>
-                            <td><span class="role-badge"><?php echo $usuario['rol']; ?></span></td>
-                            <td><?php echo $usuario['fecha_union']; ?></td>
-                            <td><?php echo $usuario['salario']; ?></td>
-                            <td>
-                                <button class="edit-btn">✎</button>
-                                <button class="delete-btn">🗑️</button>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
+                    <tbody id="user-table-body">
+                        <!-- Aquí se mostraran los usuarios con AJAX -->
                     </tbody>
                 </table>
             </div>
         </main>
     </div>
+<script src="js/home.js"> </script>
 </body>
 </html>
-

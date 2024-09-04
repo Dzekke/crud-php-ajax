@@ -1,0 +1,59 @@
+.container {
+    display: flex;
+}
+
+.main-content {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.background {
+    display: flex;
+    width: 100%;
+    background: url('Elementos-iStrategy/FONDO.jpg') no-repeat center center/cover;
+}
+
+.image-section, .form-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-section img {
+    max-width: 80%; /* Ajusta según sea necesario */
+    height: auto;
+}
+
+.form-section {
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre los íconos */
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.social-icons a img {
+    max-width: 30px; /* Controla el tamaño de los iconos */
+    height: auto;
+}

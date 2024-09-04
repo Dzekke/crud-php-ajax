@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,11 +14,6 @@
             <div class="logo">
             <a href="index.php"><img src="Elementos-iStrategy/avion.png" alt="Logo" class="logo-icon"></a>
             </div>
-            <!-- <nav class="menu">
-                <ul>
-                    <li><img src="ruta-icono-home.png" alt="Home"></li>
-                </ul>
-            </nav> -->
             <div class="social-icons">
                 <a href="https://www.facebook.mx/iStrategy"><img src="Elementos-iStrategy/redes 1.png" alt="Facebook"></a>
                 <a href="https://www.instagram.com/istrategymexico/"><img src="Elementos-iStrategy/redes 2.png" alt="Instagram"></a>
@@ -26,56 +23,61 @@
 
         <main class="main-content">
             <div class="form-section">
-                    <form class="form">
-                    <h1>Registro</h1>
-                    
-                    <label for="username">User Name</label>
-                    <div class="input-label">
-                        <div class="input-icon">
-                            <img src="Elementos-iStrategy/ICONO 1.png" alt="Usuario">
-                        </div>
-                        <input type="text" id="username" placeholder="Enter your Username">
+            <form id="registroForm" class="form">
+                <h1>Registro</h1>
+                
+                <label for="username">User Name*</label>
+                <div class="input-label">
+                    <div class="input-icon">
+                        <img src="Elementos-iStrategy/ICONO 1.png" alt="Usuario">
                     </div>
-                    
-                    <label for="email">Email Address</label>
-                    <div class="input-label">
-                        <div class="input-icon">
-                            <img src="Elementos-iStrategy/ICONO 2.png" alt="Email">
-                        </div>
-                        <input type="email" id="email" placeholder="Enter Email">
+                    <input type="text" id="username" name="username" placeholder="Enter your Username">
+                </div>
+                
+                <label for="email">Email Address*</label>
+                <div class="input-label">
+                    <div class="input-icon">
+                        <img src="Elementos-iStrategy/ICONO 2.png" alt="Email">
                     </div>
-                    
-                    <label for="password">Password</label>
-                    <div class="input-label">
-                        <div class="input-icon">
-                            <img src="Elementos-iStrategy/ICONO 3.png" alt="Contraseña">
-                        </div>
-                        <input type="password" id="password" placeholder="Enter your password">
+                    <input type="email" id="email" name="email" placeholder="Enter Email">
+                </div>
+                
+                <label for="password">Password*</label>
+                <div class="input-label">
+                    <div class="input-icon">
+                        <img src="Elementos-iStrategy/ICONO 3.png" alt="Contraseña">
                     </div>
+                    <input type="password" id="password" name="password" placeholder="Enter your password">
+                </div>
 
-                    <label for="confirm-password">Confirm Password</label>
-                    <div class="input-label">
-                        <div class="input-icon">
-                            <img src="Elementos-iStrategy/ICONO 4.png" alt="Confirmar Contraseña">
-                        </div>
-                        <input type="password" id="confirm-password" placeholder="Enter your password again">
+                <label for="confirm-password">Confirm Password*</label>
+                <div class="input-label">
+                    <div class="input-icon">
+                        <img src="Elementos-iStrategy/ICONO 4.png" alt="Confirmar Contraseña">
                     </div>
-                    
-                    <div class="gender">
-                        <label for="gender">Género</label>
-                        <label><input type="radio" name="gender" value="masculino"> Masculino</label>
-                        <label><input type="radio" name="gender" value="femenino"> Femenino</label>
-                    </div>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Enter your password again">
+                </div>
 
-                    <label class="remember">
-                        <input type="checkbox"> Recordarme siempre
-                    </label>
+                <div>
+                <input type="checkbox" id="showPassword"> Mostrar contraseña
+                </div>
+                
+                <div class="gender">
+                    <label for="gender">Género</label>
+                    <label><input type="radio" name="gender" value="masculino"> Masculino</label>
+                    <label><input type="radio" name="gender" value="femenino"> Femenino</label>
+                </div>
 
-                    <div class="buttons">
-                        <button type="submit">Submit</button>
-                        <button type="button">Cancel</button>
-                    </div>
-                </form>
+                <label class="remember">
+                    <input type="checkbox" name="remember"> Recordarme siempre
+                </label>
+                
+                <div class="buttons">
+                    <button type="submit">Submit</button>
+                    <a href="index.php"><button type="button">Cancel</button></a>
+                </div>
+            </form>
+
         </div>
         <div class="image-section">
             <div class="background">
@@ -88,5 +90,8 @@
    </main>
 
     </div>
+    <script src="js/usuario_nuevo.js"></script>
+
+
 </body>
 </html>

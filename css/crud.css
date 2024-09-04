@@ -22,9 +22,25 @@ body {
     z-index: 1000;
 }
 
+.left-content {
+    display: flex;
+    align-items: center;
+}
+
+.left-content .entries {
+    margin-right: 20px; /* Espacio entre las entradas y el logo */
+}
+
+.logo-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Centra el logo horizontalmente */
+    align-items: center;
+}
+
 .logo img {
     height: 40px;
-    align-items: center;
+    width: 200px;
 }
 
 .search-bar {
@@ -142,6 +158,10 @@ tbody tr:nth-child(even) {
     background: none;
     cursor: pointer;
     font-size: 16px;
+}
+.edit-img, .delete-img{
+    width: 20px; 
+    height: 20px;
 }
 
 .edit-btn {
