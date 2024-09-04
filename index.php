@@ -44,6 +44,7 @@ if (!isset($_SESSION['user_id'])) {
                 <li>Oficina <span class="badge">2</span></li>
             </ul>
             <button class="create-label">+ Crear nueva etiqueta</button>
+           <button class="add-contact" id="logoutButton">Cerrar Sesión</button>
         </aside>
 
         <main class="content">
@@ -69,5 +70,6 @@ if (!isset($_SESSION['user_id'])) {
         </main>
     </div>
 <script src="js/home.js"> </script>
+<script src="js/logout.js"> </script>
 </body>
 </html>
